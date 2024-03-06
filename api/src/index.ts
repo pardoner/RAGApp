@@ -55,4 +55,9 @@ async function main ({
         if (pagesToDelete && pagesToDelete.length > 0) {
             pdfAsBuffer = await deletePages(pdfAsBuffer, pagesToDelete);
         } 
+   const documents = await convertPdfToDocuments(pdfAsBuffer);
+   console.log(documents)
+   console.log('length', documents.length)
 }
+
+main({paperUrl: 'https://arxiv.org/pdf/2305.15334.pdf', name: 'test'})
